@@ -11,6 +11,10 @@ public class GPSManager : MonoBehaviour
     public float latitudeChange = 0.0f; // 위도 변화량
     public float longitudeChange = 0.0f; // 경도 변화량
 
+    public float pos_x = 0.0f;
+    public float pos_y = 0.0f;
+
+
     private bool initialized = false; // 위치 초기화 여부를 추적하는 변수
 
     void Start()
@@ -51,6 +55,9 @@ public class GPSManager : MonoBehaviour
             // 이전 위치와 현재 위치의 차이를 계산합니다.
             latitudeChange = latitude - previousLatitude;
             longitudeChange = longitude - previousLongitude;
+
+            pos_x += latitudeChange;
+            pos_y += longitudeChange;
 
             // 이전 위치를 현재 위치로 업데이트합니다.
             previousLatitude = latitude;

@@ -18,6 +18,6 @@ public class gps_pos_text2 : MonoBehaviour
     void Update()
     {
         // GPSManager 스크립트에서 위도와 경도 값을 가져와서 UI에 출력합니다.
-        textMeshProUGUI.text = "X: " + gpsManager.latitudeChange.ToString() + "\nY: " + gpsManager.longitudeChange.ToString();
+        textMeshProUGUI.text = "X: " + gpsManager.pos_x.ToString() + "\nY: " + gpsManager.pos_y.ToString();
     }
 }
