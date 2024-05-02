@@ -11,6 +11,8 @@ public class GPSManager : MonoBehaviour
     public float latitudeChange = 0.0f; // 위도 변화량
     public float longitudeChange = 0.0f; // 경도 변화량
 
+    public float distanceMoved = 0.0f; // 움직인 거리
+
     public float pos_x = 0.0f;
     public float pos_y = 0.0f;
 
@@ -58,6 +60,13 @@ public class GPSManager : MonoBehaviour
 
             pos_x += latitudeChange;
             pos_y += longitudeChange;
+
+            float _latitudeChange = latitude - previousLatitude;
+            float _longitudeChange = longitude - previousLongitude;
+
+            //벡터값
+            distanceMoved += Mathf.Sqrt(_latitudeChange * _latitudeChange + _longitudeChange * _longitudeChange);
+
 
             // 이전 위치를 현재 위치로 업데이트합니다.
             previousLatitude = latitude;
