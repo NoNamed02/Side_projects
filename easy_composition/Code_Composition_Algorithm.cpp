@@ -19,6 +19,7 @@ using namespace std;
 int code_rule(int code);
 int extra_rule(int code);
 void code_print(int code);
+void find_melody(int code);
 
 int main(void){
     srand((unsigned)time(NULL));
@@ -41,11 +42,17 @@ int main(void){
     // 6번 = 5
     // 7번 = 1
 
-    for(int i = 0; i < 7+1; i++)
+    for(int i = 0; i < 8; i++)
         cout << code[i] << " ";
     cout << endl;
-    for(int i = 0; i< 7+1; i++)
+    for(int i = 0; i< 8; i++)
         code_print(code[i]);
+
+    printf(" \n");
+
+    for(int i = 0; i < 8 ; i++){
+        find_melody(code[i]);
+    }
     return 0;
 }
 
@@ -132,4 +139,121 @@ void code_print(int code){
         cout << "G" << " ";
     else if(code == 6)
         cout << "A" << " ";
+}
+
+void find_melody(int code){
+    if(code == 1){
+        const char* m[4];
+        for(int i = 0; i < 4; i++){
+            int a = rand() % 3;
+            if(a == 0){
+                m[i] = "도";
+            }
+            else if(a == 1){
+                m[i] = "미";
+            }
+            else if(a == 2){
+                m[i] = "솔";
+            }
+        }
+        for(int i = 0; i < 4; i++){
+            cout << m[i] << " ";
+        }
+        cout << " / ";
+    }
+    else if(code == 2){
+        const char* m[4];
+        for(int i = 0; i < 4; i++){
+            int a = rand() % 3;
+            if(a == 0){
+                m[i] = "레";
+            }
+            else if(a == 1){
+                m[i] = "파";
+            }
+            else if(a == 2){
+                m[i] = "솔";
+            }
+        }
+        for(int i = 0; i < 4; i++){
+            cout << m[i] << " ";
+        }
+        cout << " / ";
+    }
+    else if(code == 3){
+        const char* m[4];
+        for(int i = 0; i < 4; i++){
+            int a = rand() % 3;
+            if(a == 0){
+                m[i] = "미";
+            }
+            else if(a == 1){
+                m[i] = "솔";
+            }
+            else if(a == 2){
+                m[i] = "시";
+            }
+        }
+        for(int i = 0; i < 4; i++){
+            cout << m[i] << " ";
+        }
+        cout << " / ";
+    }
+    else if(code == 4){
+        const char* m[4];
+        for(int i = 0; i < 4; i++){
+            int a = rand() % 3;
+            if(a == 0){
+                m[i] = "파";
+            }
+            else if(a == 1){
+                m[i] = "솔";
+            }
+            else if(a == 2){
+                m[i] = "레";
+            }
+        }
+        for(int i = 0; i < 4; i++){
+            cout << m[i] << " ";
+        }
+        cout << " / ";
+    }
+    else if(code == 5){
+        const char* m[4];
+        for(int i = 0; i < 4; i++){
+            int a = rand() % 3;
+            if(a == 0){
+                m[i] = "솔";
+            }
+            else if(a == 1){
+                m[i] = "라";
+            }
+            else if(a == 2){
+                m[i] = "도";
+            }
+        }
+        for(int i = 0; i < 4; i++){
+            cout << m[i] << " ";
+        }
+        cout << " / ";
+    }
+    else if(code == 6){
+        const char* m[4];
+        for(int i = 0; i < 4; i++){
+            int a = rand() % 3;
+            if(a == 0){
+                m[i] = "라";
+            }
+            else if(a == 1){
+                m[i] = "미";
+            }
+            else if(a == 2){
+                m[i] = "파";
+            }
+        }
+        for(int i = 0; i < 4; i++){
+            cout << m[i] << " ";
+        }
+        cout << " / ";
+    }
 }
